@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class ContaTerminal {
     public static void main(String[] args) throws Exception {
@@ -21,13 +22,16 @@ public class ContaTerminal {
         
         int numeroConta = 1021;
         String agencia = "067-8";    
-        double saldo = 237.48;
+        Double saldo = valorAleatorio();
         
         
         System.out.println("Olá " + nomeCliente + " " + sobrenomeCliente + ", obrigado por criar uma conta em nosso banco, sua agência é " + agencia + ", conta " + numeroConta + " e seu saldo é R$" + saldo + " já está disponível para saque");
 
         sc.close();
     
+    }
 
+    private static double valorAleatorio() {
+        return ThreadLocalRandom.current().nextDouble(100, 1000);
     }
 }
